@@ -16,23 +16,28 @@ export const verifyToken = async (
   res: Response,
   next: NextFunction
 ) => {
-  const token = req.signedCookies[`${COOKIE_NAME}`];
+  const token = req.signedCookies[COOKIE_NAME];
+
   if (!token || token.trim() === "") {
-    return res.status(401).json({ message: "Token  not been provided" });
+    return res.status(401).json({ message: "Token not provided" });
   }
-  return new Promise<void>((resolve, reject) => {
-    return jwt.verify(token, process.env.JWT_SECRET, (err, success) => {
-      if (err) {
-        reject(err.message);
-        return res
-          .status(401)
-          .json({ message: "Unauthorized / Token expired" });
-      } else {
-        console.log("Token Varification Successful");
-        resolve();
-        res.locals.jwt = success;
-        return next();
-      }
+
+  try {
+    const decoded = await new Promise((resolve, reject) => {
+      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(decoded);
+        }
+      });
     });
-  });
+
+    console.log("Token Verification Successful");
+    res.locals.jwt = decoded;
+    return next();
+  } catch (error) {
+    console.error("Token verification error:", error);
+    return res.status(401).json({ message: "Unauthorized / Token expired" });
+  }
 };
