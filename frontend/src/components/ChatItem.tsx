@@ -65,7 +65,7 @@ const ChatItem = ({
                 key={index}
                 style={coldarkDark}
                 language="javascript"
-                customStyle={{ fontSize: { xs: "12px", sm: "14px" } }}
+                // customStyle={{ fontSize: { xs: "12px", sm: "14px" } }}
               >
                 {block}
               </SyntaxHighlighter>
@@ -112,7 +112,7 @@ const ChatItem = ({
                 key={index}
                 style={coldarkDark}
                 language="javascript"
-                customStyle={{ fontSize: { xs: "12px", sm: "14px" } }}
+                // customStyle={{ fontSize: { xs: "12px", sm: "14px" } }}
               >
                 {block}
               </SyntaxHighlighter>
