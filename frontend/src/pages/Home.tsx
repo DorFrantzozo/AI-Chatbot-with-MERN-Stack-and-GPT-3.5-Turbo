@@ -61,11 +61,14 @@ function Home() {
           display: "flex",
           justifyContent: "center",
           mb: { xs: 5, md: "340px" },
+          mt: { xs: 5, md: 0, lg: "170Px" },
         }}
       >
         <Orb />
       </Box>
-      <Footer />
+      <Box sx={{ mb: 5 }}>
+        <Footer />
+      </Box>
     </Box>
   );
 }

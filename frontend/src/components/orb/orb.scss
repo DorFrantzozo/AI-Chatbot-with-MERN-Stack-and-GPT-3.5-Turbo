@@ -1,9 +1,9 @@
 // best in chrome
 $total: 300; // total particles
-$orb-size: 100px;
+$orb-size: 200px;
 $particle-size: 2px;
 $time: 14s;
-$base-hue: 0; // change for diff colors (180 is nice)
+$base-hue: 180; // change for diff colors (180 is nice)
 
 html,
 body {
@@ -32,7 +32,7 @@ body {
 }
 
 .c {
-  position: absolute;
+  position: fixed;
   width: $particle-size;
   height: $particle-size;
   border-radius: 50%;
@@ -67,4 +67,9 @@ body {
         rotateZ($z); // translateX * 3
     }
   }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+  $orb-size: 100px;
 }
