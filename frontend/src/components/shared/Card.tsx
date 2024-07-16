@@ -30,9 +30,7 @@ export default function MediaCard() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small " sx={{ color: "black" }}>
-          Try Now
-        </Button>
+        <Button sx={{ color: "black" }}>Try Now</Button>
       </CardActions>
     </Card>
   );
