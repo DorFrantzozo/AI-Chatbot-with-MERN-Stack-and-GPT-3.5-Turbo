@@ -4,4 +4,3 @@
 .env.local
 .env.staging
 node_modules
-vercel.json
