@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin:
-      "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
+      "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
     credentials: true,
   })
 );

@@ -6,7 +6,7 @@ import cors from "cors";
 config();
 const app = express();
 app.use(cors({
-    origin: "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
+    origin: "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
     credentials: true,
 }));
 app.use(express.json());
