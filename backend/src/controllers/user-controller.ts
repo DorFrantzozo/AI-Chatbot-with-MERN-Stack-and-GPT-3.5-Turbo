@@ -44,7 +44,8 @@ export const userSignup = async (
     // create token
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain:
+        "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
       signed: true,
       path: "/",
     });
@@ -54,7 +55,8 @@ export const userSignup = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain:
+        "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
       expires: expires,
       httpOnly: true,
       signed: true,
@@ -95,7 +97,8 @@ export const userLogin = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain:
+        "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
       signed: true,
       path: "/",
     });
@@ -105,7 +108,8 @@ export const userLogin = async (
     expires.setDate(expires.getDate() + 7);
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain:
+        "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
       expires: expires,
       httpOnly: true,
       signed: true,
@@ -168,7 +172,8 @@ export const userLogOut = async (
 
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      domain: "localhost",
+      domain:
+        "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app/",
       signed: true,
       path: "/",
     });

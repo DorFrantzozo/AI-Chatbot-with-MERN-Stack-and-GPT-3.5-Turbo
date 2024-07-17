@@ -21,7 +21,7 @@ export const verifyToken = async (
     return res.status(401).json({ message: "Token  not been provided" });
   }
   return new Promise<void>((resolve, reject) => {
-    return jwt.verify(token, process.env.JWT_SECRET, (err, success) => {
+    return jwt.verify(token, process.env.JWT_SECRET, (err: Error, success) => {
       if (err) {
         reject(err.message);
         return res
