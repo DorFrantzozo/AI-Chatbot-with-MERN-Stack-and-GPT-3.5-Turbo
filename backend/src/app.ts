@@ -7,9 +7,7 @@ config();
 
 const app = express();
 
-const allowedOrigins = [
-  "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
-];
+const allowedOrigins = ["https://ai-chatbot-client-three.vercel.app/"];
 
 app.use(
   cors({
