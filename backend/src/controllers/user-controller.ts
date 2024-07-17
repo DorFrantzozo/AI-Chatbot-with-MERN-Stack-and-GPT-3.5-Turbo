@@ -79,6 +79,7 @@ export const userLogin = async (
   res: Response,
   next: NextFunction
 ) => {
+  debugger;
   try {
     //userLogin
     const { email, password } = req.body;
