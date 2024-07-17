@@ -7,10 +7,19 @@ config();
 
 const app = express();
 
+const allowedOrigins = [
+  "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
+];
+
 app.use(
   cors({
-    origin:
-      "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
