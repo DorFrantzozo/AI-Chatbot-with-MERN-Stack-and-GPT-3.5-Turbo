@@ -7,8 +7,11 @@ config();
 
 const app = express();
 
-const allowedOrigins = ["https://ai-chatbot-client-three.vercel.app/"];
-
+const allowedOrigins = [
+  "https://ai-chatbot-client-three.vercel.app",
+  "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
+];
+app.options("*", cors());
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -24,5 +27,5 @@ app.use(
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.use("/api/v1/", appRouter);
+app.use("api/v1/", appRouter);
 export default app;
