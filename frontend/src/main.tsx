@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 
 axios.defaults.baseURL = `${import.meta.env.VITE_SERVER_URL}/api/v1`;
 axios.defaults.withCredentials = true;
+axios.defaults.headers.common["Content-Type"] = "application/json";
 
 const theme = createTheme({
   typography: {
