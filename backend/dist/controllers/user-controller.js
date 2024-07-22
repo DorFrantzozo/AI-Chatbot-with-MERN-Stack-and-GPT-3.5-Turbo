@@ -33,7 +33,7 @@ export const userSignup = async (req, res, next) => {
         // create token
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
-            domain: ".vercel.app",
+            domain: "https://ai-chatbot-client-three.vercel.app",
             signed: true,
             path: "/",
         });
@@ -42,7 +42,7 @@ export const userSignup = async (req, res, next) => {
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: "/",
-            domain: ".vercel.app",
+            domain: "https://ai-chatbot-client-three.vercel.app",
             expires: expires,
             httpOnly: true,
             signed: true,
@@ -77,7 +77,8 @@ export const userLogin = async (req, res, next) => {
         // create tokens
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
-            domain: ".vercel.app",
+            domain: "https://ai-chatbot-client-three.vercel.app",
+            secure: false,
             signed: true,
             path: "/",
         });
@@ -86,7 +87,7 @@ export const userLogin = async (req, res, next) => {
         expires.setDate(expires.getDate() + 7);
         res.cookie(COOKIE_NAME, token, {
             path: "/",
-            domain: ".vercel.app",
+            domain: "https://ai-chatbot-client-three.vercel.app",
             expires: expires,
             httpOnly: true,
             signed: true,
@@ -138,7 +139,7 @@ export const userLogOut = async (req, res, next) => {
         }
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
-            domain: ".vercel.app",
+            domain: "https://ai-chatbot-client-three.vercel.app",
             signed: true,
             path: "/",
         });
