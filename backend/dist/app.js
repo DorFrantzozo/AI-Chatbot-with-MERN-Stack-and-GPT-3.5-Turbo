@@ -14,6 +14,7 @@ app.use(cors({
     origin: "https://ai-chatbot-client-three.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
 }));
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
