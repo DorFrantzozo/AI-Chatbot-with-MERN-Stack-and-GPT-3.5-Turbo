@@ -1,7 +1,7 @@
 import { connect, disconnect } from "mongoose";
 async function connectToDb() {
   try {
-    await connect(process.env.MONGODB_URL);
+    await connect(process.env.MONGO_URL);
   } catch (error) {
     console.log(error);
     throw new Error("Failed to connect to database" + error.message);

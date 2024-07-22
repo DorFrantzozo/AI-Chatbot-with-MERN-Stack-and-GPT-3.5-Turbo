@@ -5,8 +5,13 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 config();
 const app = express();
+const allowedOrigins = [
+    "https://ai-chatbot-client-three.vercel.app",
+    "https://ai-chatbot-client-l9cgsmubm-dors-projects-2f5d6a31.vercel.app",
+];
+app.options("*", cors());
 app.use(cors({
-    origin: "https://ai-chatbot-with-mern-stack-and-gpt-3-5-turbo-xgev.vercel.app",
+    origin: [...allowedOrigins],
     credentials: true,
 }));
 app.use(express.json());
