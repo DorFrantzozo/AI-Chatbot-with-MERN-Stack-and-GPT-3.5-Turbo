@@ -11,7 +11,13 @@ const allowedOrigins = [
   "https://ai-chatbot-client-three.vercel.app",
   "https://ai-chatbot-client-l9cgsmubm-dors-projects-2f5d6a31.vercel.app",
 ];
-app.use(cors({ origin: allowedOrigins }));
+app.use(
+  cors({
+    origin: "https://ai-chatbot-client-three.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.options("*", cors());
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
