@@ -78,7 +78,6 @@ export const userLogin = async (req, res, next) => {
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
             domain: "https://ai-chatbot-client-three.vercel.app",
-            secure: false,
             signed: true,
             path: "/",
         });
@@ -91,6 +90,7 @@ export const userLogin = async (req, res, next) => {
             expires: expires,
             httpOnly: true,
             signed: true,
+            secure: false,
         }); // chane domain later!!!!!1
         return res
             .status(200)
