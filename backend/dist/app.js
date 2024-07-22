@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 config();
 const app = express();
-app.options("*", cors());
+// app.options("*", cors());
 const allowedOrigins = [
     "https://ai-chatbot-client-three.vercel.app",
     "https://ai-chatbot-client-l9cgsmubm-dors-projects-2f5d6a31.vercel.app",
