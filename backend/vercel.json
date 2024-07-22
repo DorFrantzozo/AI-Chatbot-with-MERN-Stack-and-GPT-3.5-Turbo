@@ -4,13 +4,7 @@
       "source": "/api/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": [
-            "https://ai-chatbot-client-three.vercel.app",
-            "https://ai-chatbot-client-l9cgsmubm-dors-projects-2f5d6a31.vercel.app"
-          ]
-        },
+
         {
           "key": "Access-Control-Allow-Methods",
           "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
